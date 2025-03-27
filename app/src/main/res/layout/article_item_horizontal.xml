@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/articleCardView"
+    android:layout_width="wrap_content"
+    android:layout_height="200dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Article Image -->
+        <ImageView
+            android:id="@+id/articleImage"
+            android:layout_width="180dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            tools:src="@drawable/health_placeholder" />
+
+        <!-- Article Title -->
+        <TextView
+            android:id="@+id/articleTitle"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:ellipsize="end"
+            tools:text="Sample Article Title" />
+
+        <!-- Article Description -->
+        <TextView
+            android:id="@+id/articleDescription"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            tools:text="Short description of the article for quick reading." />
+
+        <!-- Date and Source -->
+        <TextView
+            android:id="@+id/articleDate"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="12sp"
+            tools:text="Jan 1, 2025 • Health News" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

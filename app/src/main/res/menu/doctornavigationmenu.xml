@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Profile Section -->
+    <item
+        android:id="@+id/blackperson"
+        android:icon="@drawable/ic_profile"
+        android:title="Profile"
+        android:iconTint="@color/main_dark"/>
+
+    <item
+        android:id="@+id/doctorsettings"
+        android:icon="@drawable/settings"
+        android:title="Settings"
+        android:iconTint="@color/main_dark"/>
+
+    <!-- Support & Communication -->
+    <item
+        android:id="@+id/doctorfeedback"
+        android:icon="@drawable/chat"
+        android:title="Feedback"
+        android:iconTint="@color/main_dark"/>
+
+    <item
+        android:id="@+id/doctorhelp"
+        android:icon="@drawable/needhelp"
+        android:title="Need Help?"
+        android:iconTint="@color/main_dark"/>
+
+    <!-- Legal & Information -->
+    <item
+        android:id="@+id/doctorTac"
+        android:icon="@drawable/doc"
+        android:title="Terms and Conditions"
+        android:iconTint="@color/main_dark"/>
+
+    <item
+        android:id="@+id/doctoraboutus"
+        android:icon="@drawable/info"
+        android:title="About Us"
+        android:iconTint="@color/main_dark"/>
+
+    <!-- Actions -->
+    <item
+        android:id="@+id/doctorshare"
+        android:icon="@drawable/share"
+        android:title="Share"
+        android:iconTint="@color/main_dark"/>
+
+    <!-- Logout -->
+    <item
+        android:id="@+id/doctorlogout"
+        android:icon="@drawable/logout"
+        android:title="Log Out"
+        android:iconTint="@color/main_dark"/>
+
+</menu>

@@ -1,0 +1,17 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="256"
+    android:viewportHeight="256">
+
+    <!-- Back Document -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M64,64 L64,224 L176,224 L176,80 L128,64 Z M80,80 L128,80 L160,96 L160,208 L80,208 Z" />
+
+    <!-- Front Document (Overlapping Page) -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M96,32 L192,32 L192,192 L208,192 L208,16 L96,16 Z" />
+
+</vector>

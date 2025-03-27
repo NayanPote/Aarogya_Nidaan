@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/ripple_effect"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingVertical="8dp">
+
+    <!-- Icon Background -->
+    <View
+        android:id="@+id/iconBackground"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/whitecircle"
+        android:backgroundTint="@color/appointment_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Activity Icon -->
+    <ImageView
+        android:id="@+id/imgActivityIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:contentDescription="Activity type icon"
+        app:layout_constraintBottom_toBottomOf="@id/iconBackground"
+        app:layout_constraintEnd_toEndOf="@id/iconBackground"
+        app:layout_constraintStart_toStartOf="@id/iconBackground"
+        app:layout_constraintTop_toTopOf="@id/iconBackground"
+        tools:src="@drawable/colorcalander" />
+
+    <!-- Activity Message -->
+    <TextView
+        android:id="@+id/txtActivityMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iconBackground"
+        app:layout_constraintTop_toTopOf="@id/iconBackground"
+        tools:text="New appointment scheduled with Dr. Sharma" />
+
+    <!-- Activity Type (Newly Added) -->
+    <TextView
+        android:id="@+id/txtActivityType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/accent_color"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/txtActivityMessage"
+        app:layout_constraintTop_toBottomOf="@id/txtActivityMessage"
+        tools:text="Appointment" />
+
+    <!-- Activity Time -->
+    <TextView
+        android:id="@+id/txtActivityTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/txtActivityMessage"
+        app:layout_constraintTop_toBottomOf="@id/txtActivityType"
+        tools:text="Mar 20, 2025 15:30" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

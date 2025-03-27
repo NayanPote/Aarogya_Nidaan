@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="yellow">#EEFF41</color>
+    <color name="blue">#5996FD</color>
+    <color name="green">#0E5F0E</color>
+    <color name="red">#E93A3A</color>
+    <color name="purple_200">#03A9F4</color>
+    <color name="purple_500">#03A9F4</color>
+    <color name="purple_700">#03A9F4</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="background_light">#F5F7FA</color>
+    <color name="text_tertiary">#9E9E9E</color>
+    <color name="main">#BBDEFB  </color>
+    <!--    <color name="main_dark">#36A0FB</color>-->
+    <color name="main_dark">#162B44</color>
+    <color name="secondary_blue">#5686C0</color>
+    <color name="progress_indicator_color">#3BA044</color>
+
+    <color name="gray">#999999</color>
+    <color name="background">#F8F9FA</color>
+    <color name="dark_gray">#666666</color>
+    <color name="random">#639FEF</color>
+    <color name="light_gray">#F5F7FA</color>
+    <color name="primary">#456DA8</color>
+    <color name="primaryDark">#39659D</color>
+    <color name="accent">#6694CC</color>
+    <color name="primaryTextColor">#212121</color>
+    <color name="secondaryTextColor">#757575</color>
+    <color name="dividerColor">#BDBDBD</color>
+    <color name="progress_track">#33FFFFFF</color>
+    <color name="light_blue">#B3E5FC</color>
+    <!--    <color name="main_dark">#0D47A1</color>-->
+    <!--    <color name="white">#FFFFFF</color>-->
+    <!--    <color name="black">#000000</color>-->
+    <!--    <color name="light_gray">#DDDDDD</color>-->
+    <color name="medium_gray">#999999</color>
+    <color name="background_start">#1A237E</color>
+    <color name="background_center">#0D47A1</color>
+    <color name="background_end">#01579B</color>
+
+    <color name="dark_text">#2A2A37</color>
+    <color name="text_secondary">#6E7191</color>
+    <color name="primary_dark">#2B44A9</color>
+    <color name="gold">#FFC107</color>
+    <color name="accent_color">#4e7bf8</color>
+    <color name="ripple_color">#994e7bf8</color>
+
+
+        <!-- Primary Colors -->
+<!--        <color name="primary">#2196F3</color>-->
+<!--        <color name="primary_dark">#1976D2</color>-->
+        <color name="primary_light">#BBDEFB</color>
+<!--        <color name="accent">#FF4081</color>-->
+
+        <!-- Background Colors -->
+<!--        <color name="background_light">#F5F7FA</color>-->
+<!--        <color name="white">#FFFFFF</color>-->
+<!--        <color name="black">#000000</color>-->
+
+        <!-- Text Colors -->
+        <color name="text_primary">#212121</color>
+<!--        <color name="text_secondary">#757575</color>-->
+<!--        <color name="text_tertiary">#9E9E9E</color>-->
+
+        <!-- Card Colors -->
+        <color name="card_stroke">#E0E6ED</color>
+        <color name="card_background">#FFFFFF</color>
+
+        <!-- Chip Colors -->
+        <color name="chip_background">#F0F4F8</color>
+        <color name="chip_stroke">#D8DEE9</color>
+
+        <!-- Progress Colors -->
+<!--        <color name="progress_track">#E0E0E0</color>-->
+
+        <!-- Healthcare Specific Colors -->
+        <color name="patient_color">#42A5F5</color>
+        <color name="patient_color_light">#E3F2FD</color>
+        <color name="doctor_color">#26A69A</color>
+        <color name="doctor_color_light">#E0F2F1</color>
+        <color name="appointment_color_light">#F3E5F5</color>
+
+        <!-- Status Colors -->
+        <color name="success">#4CAF50</color>
+        <color name="success_light">#E8F5E9</color>
+        <color name="warning">#FFC107</color>
+        <color name="warning_light">#FFF8E1</color>
+        <color name="error">#F44336</color>
+        <color name="error_light">#FFEBEE</color>
+        <color name="info">#2196F3</color>
+        <color name="info_light">#E3F2FD</color>
+
+        <!-- Bottom Navigation Colors -->
+        <color name="bottom_nav_bg">#FFFFFF</color>
+        <color name="bottom_nav_selected">#2196F3</color>
+        <color name="bottom_nav_unselected">#9E9E9E</color>
+        <color name="bottom_nav_item_color">#2321dd</color>
+
+        <!-- Divider Colors -->
+        <color name="divider">#E0E0E0</color>
+
+        <!-- Chart Colors -->
+        <color name="chart_grid_line">#E0E0E0</color>
+        <color name="chart_label">#757575</color>
+
+    <color name="appointment_color">#3F51B5</color>
+    <color name="chat_color">#4CAF50</color>
+    <color name="conversation_color">#FF9800</color>
+    <color name="appointment_bg">#E8EAF6</color>
+    <color name="chat_bg">#E8F5E9</color>
+    <color name="conversation_bg">#FFF3E0</color>
+        <!-- Selector for bottom navigation -->
+<!--        <color name="transparent">#00000000</color>-->
+
+
+</resources>

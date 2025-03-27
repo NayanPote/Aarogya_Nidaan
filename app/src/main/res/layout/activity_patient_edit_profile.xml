@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name :"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:inputType="text"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:id="@+id/editpatientname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:layout_marginTop="6dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email :"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/editpatientemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="6dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You can't change email."
+            android:textColor="@color/red"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone no :"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/editpatientphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:inputType="number"
+            android:layout_marginTop="6dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender :"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginTop="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/editpatientgender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="5dp">
+
+            <RadioButton
+                android:id="@+id/rb_pmale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="Male"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rb_pfemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="Female"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rb_pother"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other"
+                android:textSize="16sp" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City :"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/editpatientcity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:inputType="text"
+            android:layout_marginTop="6dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date of Birth :"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/editpatientdob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="dd/mm/yyyy"
+            android:inputType="date"
+            android:textSize="14dp"
+            android:layout_marginTop="6dp"/>
+
+    </LinearLayout>
+
+    </ScrollView>
+</androidx.cardview.widget.CardView>

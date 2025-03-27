@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Book Appointment"
+                android:textColor="#1E3A5F"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium" />
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DAEAF7"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Date Selection -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Appointment Date"
+            android:textColor="#1E3A5F"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/dateText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/input_field_background"
+                android:padding="14dp"
+                android:text="Select Date"
+                android:textSize="16sp"
+                android:drawableStart="@drawable/ic_date"
+                android:drawablePadding="8dp"
+                android:textColor="#6C6C6C" />
+
+            <Button
+                android:id="@+id/selectDateBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose Date"
+                android:background="@drawable/primary_button_background"
+                android:textAllCaps="false"
+                android:layout_marginStart="8dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Time Selection -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Appointment Time"
+            android:textColor="#1E3A5F"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/timeText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Select Time"
+                android:background="@drawable/input_field_background"
+                android:padding="14dp"
+                android:textSize="16sp"
+                android:drawableStart="@drawable/ic_time"
+                android:drawablePadding="8dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="#6C6C6C" />
+
+            <Button
+                android:id="@+id/selectTimeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose Time"
+                android:background="@drawable/primary_button_background"
+                android:textAllCaps="false"
+                android:layout_marginStart="8dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Additional fields -->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Appointment Type"-->
+<!--            android:textColor="#1E3A5F"-->
+<!--            android:textSize="14sp"-->
+<!--            android:fontFamily="sans-serif-medium"-->
+<!--            android:layout_marginBottom="8dp" />-->
+
+<!--        <Spinner-->
+<!--            android:id="@+id/appointmentTypeSpinner"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/input_field_background"-->
+<!--            android:padding="14dp"-->
+<!--            android:layout_marginBottom="16dp" />-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Special Instructions (Optional)"
+            android:textColor="#1E3A5F"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/specialInstructionsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/input_field_background"
+            android:gravity="top"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:hint="Enter any special instructions here"
+            android:textColorHint="#9E9E9E"
+            android:inputType="textMultiLine"
+            android:layout_marginBottom="14dp" />
+
+        <!-- Submit Button -->
+<!--        <Button-->
+<!--            android:id="@+id/confirmAppointmentBtn"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Confirm Appointment"-->
+<!--            android:background="@drawable/confirm_button_background"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:padding="16dp"-->
+<!--            android:layout_marginTop="8dp" />-->
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

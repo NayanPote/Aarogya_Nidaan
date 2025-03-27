@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:gravity="left|top"
+    android:padding="25dp"
+    android:background="@drawable/toolbar_gradient"
+    android:elevation="0dp">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:src="@drawable/back"
+            android:layout_marginTop="20dp"
+            android:background="@color/transparent"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left|bottom"
+            android:elevation="0dp">
+
+            <!-- Profile Image in a Circular Card -->
+            <ImageView
+                android:id="@+id/patientnavimg"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="left"
+                android:src="@drawable/patientavatar2"
+                android:background="@drawable/circular_border"
+                android:contentDescription="Patients's photo"/>
+
+            <!-- Patient Name -->
+            <TextView
+                android:id="@+id/patientnavname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Patient Name"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:layout_marginTop="9dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"/>
+
+            <!-- Patient Email -->
+            <TextView
+                android:id="@+id/patientnavemail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Patient email"
+                android:textColor="#B4B4B4"
+                android:textSize="16dp"
+                android:layout_marginTop="2dp"
+                android:textAppearance="?attr/textAppearanceBody2"/>
+
+            <TextView
+                android:id="@+id/patientnavid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Patient Id"
+                android:textColor="#B4B4B4"
+                android:textSize="12dp"
+                android:layout_marginTop="2dp"
+                android:textAppearance="?attr/textAppearanceBody2"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
+

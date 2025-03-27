@@ -1,0 +1,46 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="50dp"
+    android:height="55dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Clipboard background -->
+    <path
+        android:fillColor="#006695"
+        android:pathData="M4,3h16a2,2 0 0,1 2,2v16a2,2 0 0,1 -2,2h-16a2,2 0 0,1 -2,-2v-16a2,2 0 0,1 2,-2z" />
+
+    <!-- Paper sheet inside clipboard -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M7,6h10a1,1 0 0,1 1,1v12a1,1 0 0,1 -1,1h-10a1,1 0 0,1 -1,-1v-12a1,1 0 0,1 1,-1z" />
+
+    <!-- Heartbeat line -->
+    <path
+        android:strokeWidth="1"
+        android:strokeColor="#FF3B3B"
+        android:fillColor="@null"
+        android:pathData="M8,10L9,10L10,8L11,12L12.5,10L13.5,11L15,10L16,10" />
+
+    <!-- Heart -->
+    <path
+        android:fillColor="#FF3B3B"
+        android:strokeColor="#D32F2F"
+        android:strokeWidth="0.5"
+        android:pathData="M13,8.5C14,7.5 15.5,9 13,10.5C10.5,9 12,7.5 13,8.5z" />
+
+    <!-- Medical Plus Symbol -->
+    <!--    <path-->
+    <!--        android:fillColor="#FF0C0C"-->
+    <!--        android:pathData="M11.25,8.5h1.5v1.5h1.5v1.5h-1.5v1.5h-1.5v-1.5h-1.5v-1.5h1.5z" />-->
+
+
+    <!-- Text lines -->
+    <path android:fillColor="#666666" android:pathData="M8,14h8v0.6h-8z" />
+    <path android:fillColor="#666666" android:pathData="M8,16h8v0.6h-8z" />
+    <path android:fillColor="#666666" android:pathData="M8,18h5v0.6h-5z" />
+
+    <!-- Visual data indicator -->
+    <rect android:x="14dp" android:y="18dp" android:width="2dp" android:height="0.6dp" android:fillColor="#6A8FBF" />
+    <rect android:x="14.5dp" android:y="17dp" android:width="1dp" android:height="3dp" android:fillColor="#6495D3" />
+</vector>

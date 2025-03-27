@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Aarogya Nidaan</string>
+    <string name="open">Open Drawer</string>
+    <string name="close">Close Drawer</string>
+    <string name="title_activity_nearby_hospitals">NearbyHospitalsActivity</string>
+    <string name="title_activity_nearbyhospitals">nearbyhospitals</string>
+    <string name="error_location_permission">Location permission is required</string>
+    <string name="error_no_hospitals">No hospitals found nearby</string>
+    <string name="error_fetch_failed">Failed to fetch hospitals</string>
+    <string name="loading">Loading…</string>
+    <string name="retry">Retry</string>
+    <string name="refresh">Refresh</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBH5SpeGfFY0JWXmM7mopaMXypFJ1gks9A</string>
+    <string name="title_activity_nearbypharmacy">nearbypharmacy</string>
+    <string name="title_activity_nearbyambulance">nearbyambulance</string>
+    <string name="default_web_client_id">37461893091-mjmsb4t3rlkh711vr6fjhfojrt321qsp.apps.googleusercontent.com</string>
+
+    <string name="health_articles">Health &amp; Fitness Articles</string>
+    <string name="back_button">Back</string>
+    <string name="article_image">Article Image</string>
+    <string name="no_articles_found">No articles found. Please check your internet connection and try again.</string>
+    <string name="loading_articles">Loading articles…</string>
+    <string name="failed_to_load">Failed to load articles</string>
+
+
+</resources>

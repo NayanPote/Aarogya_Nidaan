@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:type="linear"
+        android:angle="90"
+        android:startColor="#1565C0"
+        android:endColor="#00000000" />
+    <path
+        android:pathData="M0,160 L0,20 Q250,40,500,30 Q750,20,1000,50 L1000,160 L0,160 Z"
+        android:fillColor="#1565C0" />
+</shape>

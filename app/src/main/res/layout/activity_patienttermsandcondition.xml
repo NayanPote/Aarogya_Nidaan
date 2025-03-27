@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    android:id="@+id/main"
+    tool:context=".patienttermsandcondition">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+
+        android:background="#8A8A8A">
+
+        <ImageButton
+            android:id="@+id/patienttermsback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="6dp"
+            android:src="@drawable/back"
+            android:background="@color/transparent"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Terms And Conditions"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="By registering as a patient on Aarogya Nidaan App and using its services, you agree to the following terms and conditions. Please read them carefully before proceeding."
+                android:textSize="18sp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Purpose of the App:"
+                android:layout_marginStart="13dp"
+                android:textColor="@color/black"
+                android:layout_gravity="left"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The App facilitates the collection, storage, and transmission of health data and communication between you and your doctor. The App does not provide medical advice or diagnosis, and it is not intended to replace professional medical care."
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Patient Responsibilities"
+                android:textColor="@color/black"
+                android:layout_gravity="left"
+                android:layout_marginStart="15dp"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="a. Accuracy of Information"
+                android:textSize="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You agree to provide accurate and up-to-date health information during registration and throughout the use of the App. This includes details about your medical history, medications, and any other relevant health data."
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="b. Health Data"
+                android:textSize="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You acknowledge that the health data you input into the App may be used by your doctor for medical purposes. You are responsible for ensuring the accuracy of this data."
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="c. Communication with Healthcare Providers"
+                android:textSize="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="While the App enables communication between you and your doctor, it does not guarantee immediate responses. You should not rely solely on the App for urgent medical advice or emergencies."
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Data Security and Privacy"
+                android:textColor="@color/black"
+                android:layout_gravity="left"
+                android:layout_marginStart="15dp"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="a. Confidentiality of Your Health Data"
+                android:textSize="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We are committed to protecting your personal and health data. The App complies with applicable privacy laws, including [Applicable Data Protection Laws, e.g., GDPR, HIPAA], and your data will only be shared with your doctor or healthcare providers with your consent."
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="b. Third-Party Access"
+                android:textSize="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your health data may be shared with third parties only with your consent or as required by law. You understand that while we take measures to protect your data, no system can be completely secure, and there is always a risk of data breaches."
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. Limitation of Liability:"
+                android:textColor="@color/black"
+                android:layout_marginStart="15dp"
+                android:layout_gravity="left"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The App is not responsible for any harm, injury, or complications that may result from medical advice, diagnosis, or treatment provided by your doctor based on the information transmitted through the App. The App is also not liable for:"
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="a. Any delays in communication or data transmission."
+                android:textSize="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:lineSpacingExtra="4dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="b. Any medical errors resulting from inaccurate or incomplete data provided by you."
+                android:textSize="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="c. Any technical issues that may affect the availability or functionality of the App.."
+                android:textSize="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:lineSpacingExtra="4dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5. Indemnification"
+                android:textColor="@color/black"
+                android:layout_gravity="left"
+                android:layout_marginStart="15dp"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You agree to indemnify and hold harmless the App, its developers, and affiliates from any claims, damages, or expenses (including legal fees) that arise from your use of the App, including but not limited to:"
+                android:textSize="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="a. Inaccurate health data."
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="b. Unauthorized access to your account or data."
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="c. Misuse of the App’s services."
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="6. Emergency Situations"
+                android:textColor="@color/black"
+                android:layout_gravity="left"
+                android:layout_marginStart="15dp"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The App is not intended for use in emergencies. In case of a medical emergency, you should immediately contact emergency services or visit the nearest healthcare facility. The App should not be used to diagnose or treat urgent medical conditions."
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="7. No Guarantee of Treatment Outcomes"
+                android:textColor="@color/black"
+                android:layout_gravity="left"
+                android:layout_marginStart="15dp"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You acknowledge that the App facilitates communication with healthcare professionals, but the effectiveness of any medical treatment or advice provided is not guaranteed. Treatment decisions are made by your doctor, and the App has no control over the medical decisions made by your healthcare providers."
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="8. Termination of Use"
+                android:textColor="@color/black"
+                android:layout_gravity="left"
+                android:layout_marginStart="15dp"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The App reserves the right to suspend or terminate your account if you breach these terms, engage in illegal activity, or misuse the App in any way."
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="9. Governing Law and Dispute Resolution"
+                android:textColor="@color/black"
+                android:layout_gravity="left"
+                android:layout_marginStart="15dp"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="These terms are governed by the laws of [Your Country/State]. Any disputes will be resolved through arbitration or in courts located in [Your Location], as applicable."
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10. Amendments to the Terms"
+                android:textColor="@color/black"
+                android:layout_gravity="left"
+                android:layout_marginStart="15dp"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We reserve the right to update or modify these Terms and Conditions at any time. Any changes will be posted on this page, and your continued use of the App after such changes constitutes acceptance of the updated terms."
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="11. Acceptance of Terms"
+                android:textColor="@color/black"
+                android:layout_gravity="left"
+                android:layout_marginStart="15dp"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="By registering and using the App, you acknowledge that you have read, understood, and agree to these terms and conditions."
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

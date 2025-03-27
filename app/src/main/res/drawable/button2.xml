@@ -1,0 +1,19 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Border color and thickness -->
+    <stroke
+        android:width="2dp"
+        android:color="#000000" />
+
+    <!-- Background color (optional, can be transparent) -->
+    <solid android:color="@color/transparent" />
+
+    <!-- Corner radius for rounded corners -->
+    <corners android:radius="8dp" />
+
+    <!-- Padding inside the button (optional) -->
+    <padding
+        android:left="8dp"
+        android:top="4dp"
+        android:right="8dp"
+        android:bottom="4dp" />
+</shape>

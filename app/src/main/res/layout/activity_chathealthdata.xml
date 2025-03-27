@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/main">
+
+    <!-- Toolbar -->
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:src="@drawable/back"/>
+
+        <!-- Report Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Health REPORT"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <ImageButton
+            android:id="@+id/reportdownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/download"
+            android:background="@color/transparent"
+            android:layout_gravity="right"
+            android:layout_marginEnd="25dp"
+            app:tint="@color/white" />
+
+    </Toolbar>
+
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <!-- Patient Information Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PATIENT INFORMATION"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1">
+
+                <TableRow>
+                    <TextView android:text="Patient's Name: " android:textStyle="bold"/>
+                    <TextView android:id="@+id/patientNameText"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Patient ID: " android:textStyle="bold"/>
+                    <TextView android:id="@+id/PatientId"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Patients's Age: " android:textStyle="bold"/>
+                    <TextView android:id="@+id/patientage"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Date: " android:textStyle="bold"/>
+                    <TextView android:id="@+id/reportDate"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Time: " android:textStyle="bold"/>
+                    <TextView android:id="@+id/reportTime"/>
+                </TableRow>
+            </TableLayout>
+
+            <!-- Vital Signs Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="VITAL SIGNS"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="12dp"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+                <TableRow android:background="#B3B3B3">
+                    <TextView android:text="Parameter" android:textStyle="bold" android:padding="4dp"/>
+                    <TextView android:text="Value" android:textStyle="bold" android:padding="4dp"/>
+                    <TextView android:text="Normal Range" android:textStyle="bold" android:padding="4dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Temperature" android:padding="4dp"/>
+                    <TextView android:id="@+id/temperatureValueText" android:padding="4dp"/>
+                    <TextView android:text="36.5-37.5°C" android:padding="4dp"/>
+                </TableRow>
+
+                <TableRow android:background="#E6E6E6">
+                    <TextView android:text="Heart Rate" android:padding="4dp"/>
+                    <TextView android:id="@+id/heartRateValueText" android:padding="4dp"/>
+                    <TextView android:text="60-100 bpm" android:padding="4dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Blood Pressure" android:padding="4dp"/>
+                    <TextView android:id="@+id/bloodPressureValueText" android:padding="4dp"/>
+                    <TextView android:text="120/80 mmHg" android:padding="4dp"/>
+
+                </TableRow>
+
+                <TableRow android:background="#E6E6E6">
+                    <TextView android:text="Oxygen Saturation" android:padding="4dp"/>
+                    <TextView android:id="@+id/oxygenSaturationValueText" android:padding="4dp"/>
+                    <TextView android:text="95-100%" android:padding="4dp"/>
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Respiratory Rate" android:padding="4dp"/>
+                    <TextView android:id="@+id/respiratoryrateValueText" android:padding="4dp"/>
+                    <TextView android:text="12-20 RPM" android:padding="4dp"/>
+                </TableRow>
+
+                <TableRow android:background="#E6E6E6">
+                    <TextView android:text="Pulse Rate" android:padding="4dp"/>
+                    <TextView android:id="@+id/pulserateValueText" android:padding="4dp"/>
+                    <TextView android:text="60-100 BPM" android:padding="4dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Sweat Rate" android:padding="4dp"/>
+                    <TextView android:id="@+id/sweatrateValueText" android:padding="4dp"/>
+                    <TextView android:text="0.8-1.4 L/hr" android:padding="4dp"/>
+                </TableRow>
+
+                <TableRow android:background="#E6E6E6">
+                    <TextView android:text="Sleep Duration" android:padding="4dp"/>
+                    <TextView android:id="@+id/sleepdataValueText" android:padding="4dp"/>
+                    <TextView android:text="7-9 hrs" android:padding="4dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Pulse Transit Time" android:padding="4dp"/>
+                    <TextView android:id="@+id/pulsetransittimeValueText" android:padding="4dp"/>
+                    <TextView android:text="200-280 ms" android:padding="4dp"/>
+
+                </TableRow>
+            </TableLayout>
+
+            <!-- Laboratory Values Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LABORATORY VALUES"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="12dp"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+                <TableRow android:background="#B3B3B3">
+                    <TextView android:text="Test" android:textStyle="bold" android:padding="4dp"/>
+                    <TextView android:text="Result" android:textStyle="bold" android:padding="4dp"/>
+                    <TextView android:text="Reference Range" android:textStyle="bold" android:padding="4dp"/>
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Cholesterol" android:padding="4dp"/>
+                    <TextView android:id="@+id/cholesterollevelsValueText" android:padding="4dp"/>
+                    <TextView android:text="&lt;200 mg/dL" android:padding="4dp"/>
+                </TableRow>
+
+                <TableRow android:background="#E6E6E6">
+                    <TextView android:text="Hemoglobin" android:padding="4dp"/>
+                    <TextView android:id="@+id/hemoglobinlevelsValueText" android:padding="4dp"/>
+                    <TextView android:text="13.5-17.5 g/dL" android:padding="4dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Electrolytes" android:padding="4dp"/>
+                    <TextView android:id="@+id/electrolytelevelsValueText" android:padding="4dp"/>
+                    <TextView android:text="135-145 mmol/L" android:padding="4dp"/>
+                </TableRow>
+            </TableLayout>
+
+            <!-- Comments Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CLINICAL NOTES"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="12dp"/>
+
+            <EditText
+                android:id="@+id/clinicalNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_background"
+                android:padding="8dp"
+                android:inputType="textMultiLine"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right">
+
+                <ImageButton
+                    android:id="@+id/clinicalNotessave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/save"/>
+
+                <ImageButton
+                    android:id="@+id/clinicalNotesedit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/edit"/>
+
+                <ImageButton
+                    android:id="@+id/clinicalNotesmic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/mic"/>
+
+            </LinearLayout>
+
+            <!-- Report Footer -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="32dp">
+
+                <TextView
+                    android:id="@+id/doctorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Doctor's Name"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/doctorSignature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Digital Signature"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

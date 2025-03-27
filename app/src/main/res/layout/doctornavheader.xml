@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:gravity="bottom"
+        android:padding="25dp"
+        android:background="@drawable/button11"
+        android:elevation="0dp">
+
+        <!-- Profile Image in a Circular Card -->
+        <ImageView
+            android:id="@+id/doctornavimg"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="left"
+            android:src="@drawable/doctoravatar3"
+            android:background="@drawable/circular_border"
+            android:contentDescription="Doctor's photo"/>
+
+        <!-- Patient Name -->
+        <TextView
+            android:id="@+id/doctornavname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doctor Name"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_marginTop="9dp"
+            android:textAppearance="?attr/textAppearanceHeadline6"/>
+
+        <!-- Patient Email -->
+        <TextView
+            android:id="@+id/doctornavemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doctor email"
+            android:textColor="#B4B4B4"
+            android:textSize="16dp"
+            android:layout_marginTop="2dp"
+            android:textAppearance="?attr/textAppearanceBody2"/>
+
+        <TextView
+            android:id="@+id/doctornavid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doctor Id"
+            android:textColor="#B4B4B4"
+            android:textSize="12dp"
+            android:layout_marginTop="2dp"
+            android:textAppearance="?attr/textAppearanceBody2"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+

@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- First dot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,5a1,1 0 1,0 0,2a1,1 0 1,0 0,-2" />
+
+    <!-- Second dot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,11a1,1 0 1,0 0,2a1,1 0 1,0 0,-2" />
+
+    <!-- Third dot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,17a1,1 0 1,0 0,2a1,1 0 1,0 0,-2" />
+</vector>

@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AarogyaNidaan" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here -->
+    </style>
+    <style name="Theme.AarogyaNidaan" parent="Base.Theme.AarogyaNidaan" />
+    <style name="CircularImageView">
+        <item name="cornerSize">50%</item>
+    </style>
+
+</resources>

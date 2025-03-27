@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AarogyaNidaan" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Your theme customizations -->
+        <item name="colorPrimary">@color/main_dark</item>
+        <item name="colorPrimaryDark">@color/main_dark</item>
+        <item name="colorAccent">@color/main_dark</item>
+    </style>
+
+
+    <style name="Theme.AarogyaNidaan" parent="Base.Theme.AarogyaNidaan" />
+    <style name="CircularImageView">
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+</resources>

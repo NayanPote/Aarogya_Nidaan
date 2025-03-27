@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <View
+            android:id="@+id/priorityIndicator"
+            android:layout_width="12dp"
+            android:layout_height="0dp"
+            android:background="@drawable/priority_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textNotificationTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/buttonDeleteNotification"
+            app:layout_constraintStart_toEndOf="@+id/priorityIndicator"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Notification Title" />
+
+        <TextView
+            android:id="@+id/textNotificationMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            app:layout_constraintEnd_toStartOf="@+id/buttonDeleteNotification"
+            app:layout_constraintStart_toEndOf="@+id/priorityIndicator"
+            app:layout_constraintTop_toBottomOf="@+id/textNotificationTitle"
+            tools:text="This is a notification message with details about something important for the users" />
+
+        <TextView
+            android:id="@+id/textNotificationType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/priorityIndicator"
+            app:layout_constraintTop_toBottomOf="@+id/textNotificationMessage"
+            tools:text="Type: Standard" />
+
+        <TextView
+            android:id="@+id/textNotificationTarget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/priorityIndicator"
+            app:layout_constraintTop_toBottomOf="@+id/textNotificationType"
+            tools:text="Target: All Users" />
+
+        <TextView
+            android:id="@+id/textNotificationTimestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@+id/priorityIndicator"
+            app:layout_constraintTop_toBottomOf="@+id/textNotificationTarget"
+            tools:text="Sent: 2025-03-21 14:30" />
+
+        <ImageButton
+            android:id="@+id/buttonDeleteNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Delete notification"
+            android:padding="8dp"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/main_dark" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

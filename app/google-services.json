@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "37461893091",
+    "firebase_url": "https://aarogya-nidaan-c37dd-default-rtdb.firebaseio.com",
+    "project_id": "aarogya-nidaan-c37dd",
+    "storage_bucket": "aarogya-nidaan-c37dd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37461893091:android:457fdd803e816656e4cad6",
+        "android_client_info": {
+          "package_name": "com.healthcare.aarogyanidaan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "37461893091-mjmsb4t3rlkh711vr6fjhfojrt321qsp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBShtHgnZAgcLqc0D0VYanpy1iFrwsl2ZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "37461893091-mjmsb4t3rlkh711vr6fjhfojrt321qsp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
