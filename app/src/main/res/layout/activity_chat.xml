@@ -36,8 +36,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="1"
-                android:layout_marginStart="8dp">
+                android:layout_weight="1">
 
                 <TextView
                     android:id="@+id/name"
@@ -53,6 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Online"
+                     android:visibility="gone"
                     android:textColor="#E0E0E0"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -62,8 +62,8 @@
                 android:id="@+id/container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/healthDataButton"
@@ -77,14 +77,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
                     android:text="Health Data"
                     android:textColor="#FFFFFF"
                     android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:layout_marginStart="4dp" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- Three Dots Button (Fixed alignment) -->
             <ImageButton
                 android:id="@+id/menuButton"
                 android:layout_width="48dp"
