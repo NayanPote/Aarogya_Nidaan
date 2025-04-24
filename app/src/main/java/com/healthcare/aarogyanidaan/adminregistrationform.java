@@ -2,14 +2,12 @@ package com.healthcare.aarogyanidaan;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -17,16 +15,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class adminregistrationform extends AppCompatActivity {
-
     private TextInputEditText editTextEmail, editTextPassword, editTextConfirmPassword;
     private Button buttonRegister;
     private ProgressBar progressBar;
-
     // Firebase
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
@@ -105,14 +100,12 @@ public class adminregistrationform extends AppCompatActivity {
                             // Get user ID
                             String userId = mAuth.getCurrentUser().getUid();
 
-                            // Create admin data to store in database
+                            // Create simplified admin data with just email and password
                             Map<String, Object> adminData = new HashMap<>();
                             adminData.put("email", email);
-                            adminData.put("uid", userId);
-                            adminData.put("isAdmin", true);
-                            adminData.put("createdAt", System.currentTimeMillis());
+                            adminData.put("password", password);
 
-                            // Store admin data in Firebase Realtime Database under "Admin" branch
+                            // Store admin data in Firebase Realtime Database
                             mDatabase.child("Admin").child(userId).setValue(adminData)
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
@@ -124,8 +117,6 @@ public class adminregistrationform extends AppCompatActivity {
                                                         "Admin registered successfully!",
                                                         Toast.LENGTH_SHORT).show();
                                                 clearInputFields();
-                                                // You can navigate to another screen here if needed
-                                                // finish();
                                             } else {
                                                 Toast.makeText(adminregistrationform.this,
                                                         "Failed to register admin: " + task.getException().getMessage(),

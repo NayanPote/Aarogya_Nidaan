@@ -21,6 +21,7 @@ firebaseAuth = "23.1.0"
 firebaseStorage = "21.0.1"
 firebaseMessaging = "24.1.0"
 firebaseFirestore = "25.1.2"
+navigationRuntime = "2.8.9"
 
 [libraries]
 graphview = { module = "com.jjoe64:graphview", version.ref = "graphview" }
@@ -42,6 +43,7 @@ firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version
 firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
 firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging", version.ref = "firebaseMessaging" }
 firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
+navigation-runtime = { group = "androidx.navigation", name = "navigation-runtime", version.ref = "navigationRuntime" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

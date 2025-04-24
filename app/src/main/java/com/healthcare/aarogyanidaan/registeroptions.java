@@ -44,14 +44,12 @@ public class registeroptions extends AppCompatActivity {
         //animations
         doctoroption.setAnimation(leftright);
         patientoption.setAnimation(leftright);
-
         // Apply window insets listener
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
         // Set click listeners for the buttons
         patientoptionregister.setOnClickListener(v -> {
             Toast.makeText(getApplicationContext(), "Fill all details", Toast.LENGTH_SHORT).show();

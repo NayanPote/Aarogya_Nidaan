@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <!-- Location permissions -->
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Network permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -19,6 +19,8 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" /> <!-- Optional permissions for older versions -->
     <uses-permission android:name="android.permission.VIBRATE" /> <!-- Feature requirements -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -45,6 +47,16 @@
         android:theme="@style/AppTheme"
         tools:targetApi="34">
         <activity
+            android:name=".DoctorNotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PatientNotificationActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AppRatingandfeedbacks"
+            android:exported="false" />
+        <activity
             android:name=".adminregistrationform"
             android:exported="false" />
         <activity
@@ -53,6 +65,7 @@
         <activity
             android:name=".Admin"
             android:exported="false" />
+
         <service
             android:name=".AarogyaNidaanMessagingService"
             android:exported="false">

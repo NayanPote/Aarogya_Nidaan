@@ -130,11 +130,36 @@ public class patientdashboard extends AppCompatActivity {
 
     private void updateHealthDataUI(String temperature, String heartRate,
                                     String bloodPressure, String oxygenSaturation) {
-        binding.temperatureValueText.setText(temperature + " °C"); // Temperature in Celsius
-        binding.heartRateValueText.setText(heartRate + " bpm"); // Heart rate in beats per minute
-        binding.bloodPressureValueText.setText(bloodPressure + " mmHg"); // Blood pressure in mmHg
-        binding.oxygenSaturationValueText.setText(oxygenSaturation + " %"); // Oxygen saturation in percentage
+        if (binding == null) {
+            Log.e("patientdashboard", "Binding is null in updateHealthDataUI");
+            return;
+        }
+
+        if (temperature != null) {
+            binding.temperatureValueText.setText(temperature + " °C");
+        } else {
+            binding.temperatureValueText.setText("-- °C"); // Default value
+        }
+
+        if (heartRate != null) {
+            binding.heartRateValueText.setText(heartRate + " bpm");
+        } else {
+            binding.heartRateValueText.setText("-- bpm");
+        }
+
+        if (bloodPressure != null) {
+            binding.bloodPressureValueText.setText(bloodPressure + " mmHg");
+        } else {
+            binding.bloodPressureValueText.setText("-- mmHg");
+        }
+
+        if (oxygenSaturation != null) {
+            binding.oxygenSaturationValueText.setText(oxygenSaturation + " %");
+        } else {
+            binding.oxygenSaturationValueText.setText("-- %");
+        }
     }
+
 
     private void setupClickListeners() {
         binding.relatedarticles.setOnClickListener(v -> {
@@ -154,7 +179,7 @@ public class patientdashboard extends AppCompatActivity {
         });
 
         binding.btnNotifications.setOnClickListener(v -> {
-            Intent intent = new Intent(patientdashboard.this, NotificationSchedulerActivity.class);
+            Intent intent = new Intent(patientdashboard.this, PatientNotificationActivity.class);
             startActivity(intent);
         });
 
@@ -443,6 +468,9 @@ public class patientdashboard extends AppCompatActivity {
                 return true;
             } else if (id == R.id.patientprofile) {
                 startActivity(new Intent(patientdashboard.this, patientprofile.class));
+                return true;
+            } else if (id == R.id.patientrate) {
+                startActivity(new Intent(patientdashboard.this, AppRatingandfeedbacks.class));
                 return true;
             }
             return false;

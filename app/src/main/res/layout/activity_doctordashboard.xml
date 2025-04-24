@@ -1282,7 +1282,7 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:id="@+id/navChat"
+                                android:id="@+id/docnoti"
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:src="@drawable/notificationbell"

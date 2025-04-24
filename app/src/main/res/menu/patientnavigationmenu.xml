@@ -16,9 +16,9 @@
         android:iconTint="@color/main_dark"/>
 
     <item
-        android:id="@+id/patientfeedback"
-        android:icon="@drawable/chat"
-        android:title="Feedback"
+        android:id="@+id/patientrate"
+        android:icon="@drawable/star"
+        android:title="Rate And Review"
         android:iconTint="@color/main_dark"/>
 
     <!-- Legal & Information -->

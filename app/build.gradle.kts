@@ -89,6 +89,7 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.firebase.messaging)
     implementation(libs.firebase.firestore)
+    implementation(libs.navigation.runtime)
     annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
 
     implementation ("com.google.firebase:firebase-firestore:24.10.0")

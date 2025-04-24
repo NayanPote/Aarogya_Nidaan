@@ -40,7 +40,6 @@ public class NotificationForegroundService extends Service {
         createForegroundNotificationChannel();
     }
 
-
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d(TAG, "Starting foreground service");
@@ -91,7 +90,6 @@ public class NotificationForegroundService extends Service {
 //        stopIntent.setAction("STOP_SERVICE");
 //        return PendingIntent.getService(this, 0, stopIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 //    }
-
 
     private void createForegroundNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

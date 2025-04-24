@@ -16,9 +16,9 @@
 
     <!-- Support & Communication -->
     <item
-        android:id="@+id/doctorfeedback"
-        android:icon="@drawable/chat"
-        android:title="Feedback"
+        android:id="@+id/doctorrate"
+        android:icon="@drawable/star"
+        android:title="Rate And Review"
         android:iconTint="@color/main_dark"/>
 
     <item

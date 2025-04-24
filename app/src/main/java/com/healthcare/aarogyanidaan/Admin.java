@@ -71,6 +71,13 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.Toast;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class Admin extends AppCompatActivity {
 
     // UI elements
@@ -105,7 +112,8 @@ public class Admin extends AppCompatActivity {
 
     // Monthly appointment data
     private int[] monthlyAppointments = new int[6]; // Last 6 months
-
+    private BottomNavigationView bottomNavigationView;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -137,6 +145,33 @@ public class Admin extends AppCompatActivity {
 
         // Load data from Firebase
         fetchDataFromFirebase();
+
+        // Initialize Bottom Navigation
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
+    
+    }
+
+    private boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.navigation_dashboard) {
+            Toast.makeText(this, "Dashboard Clicked", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.navigation_users) {
+            startActivity(new Intent(this, chatbot.class));
+            return true;
+        } else if (id == R.id.Appratings) {
+            startActivity(new Intent(this, AppRatingandfeedbacks.class));
+            return true;
+        } else if (id == R.id.navigation_appointments) {
+//            startActivity(new Intent(this, .class));
+            return true;
+        } else if (id == R.id.navigation_settings) {
+//            startActivity(new Intent(this, SettingsActivity.class));
+            return true;
+        }
+        return false;
     }
 
     private void initializeViews() {
@@ -178,7 +213,6 @@ public class Admin extends AppCompatActivity {
         setupPieChart();
         setupLineChart();
     }
-
 
     private void setUpClickListeners() {
         fabRefresh.setOnClickListener(v -> {

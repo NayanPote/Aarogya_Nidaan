@@ -19,7 +19,9 @@
     <color name="main_dark">#162B44</color>
     <color name="secondary_blue">#5686C0</color>
     <color name="progress_indicator_color">#3BA044</color>
-
+    <color name="white_80">#CCFFFFFF</color>
+    <color name="primary_color">#0D47A1</color>
+    <color name="rating_star_color">#FFC107</color>
     <color name="gray">#999999</color>
     <color name="background">#F8F9FA</color>
     <color name="dark_gray">#666666</color>
@@ -115,6 +117,9 @@
     <color name="conversation_bg">#FFF3E0</color>
         <!-- Selector for bottom navigation -->
 <!--        <color name="transparent">#00000000</color>-->
-
+    <color name="card_dark">#1E1E1E</color>
+    <color name="input_dark">#2D2D2D</color>
+    <color name="text_light">#CCCCCC</color>
+    <color name="rating_yellow">#FFC107</color>
 
 </resources>

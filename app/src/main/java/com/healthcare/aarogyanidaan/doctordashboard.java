@@ -56,7 +56,7 @@ public class doctordashboard extends AppCompatActivity {
     private static final String SHARED_PREFS = "sharedPrefs";
     private DrawerLayout doctorDrawerLayout;
     private ImageView docNavToggle;
-    private ImageView docChat;
+    private ImageView docChat, docnoti;
     private FirebaseAuth auth;
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     private TextView chatBadge;
@@ -106,6 +106,12 @@ public class doctordashboard extends AppCompatActivity {
 // Add click listener for "Related Articles" button
         findViewById(R.id.relatedarticles).setOnClickListener(v -> {
             Intent intent = new Intent(doctordashboard.this, AllArticlesActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        });
+
+        findViewById(R.id.docnoti).setOnClickListener(v -> {
+            Intent intent = new Intent(doctordashboard.this, DoctorNotificationActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
@@ -366,6 +372,9 @@ public class doctordashboard extends AppCompatActivity {
                 }
             }else if (id == R.id.doctoraboutus) {
                 showinformationDialog();
+                return true;
+            }else if (id == R.id.doctorrate) {
+                startActivity(new Intent(doctordashboard.this, AppRatingandfeedbacks.class));
                 return true;
             }
             return false;
