@@ -58,8 +58,12 @@ dependencies {
 
     implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
 
+//    implementation ("com.squareup.okhttp3:okhttp:4.9.3")
 
-
+    // Optional: Supabase Android SDK (if you want to use more Supabase features)
+//    implementation ("io.github.supabase:supabase-android:0.4.0")
+//    implementation ("io.github.supabase:postgrest-android:0.4.0")
+//    implementation ("io.github.supabase:storage-android:0.4.0")
 
     // Google Material UI
     implementation("com.google.android.material:material:1.9.0")

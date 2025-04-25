@@ -1,14 +1,21 @@
 package com.healthcare.aarogyanidaan;
+import com.healthcare.aarogyanidaan.SupabaseConfig;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -18,7 +25,20 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.healthcare.aarogyanidaan.databinding.ActivityPatientregistrationformBinding;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Random;
+import java.util.UUID;
+
+//import io.supabase.postgrest.PostgrestClient;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class patientregistrationform extends AppCompatActivity {
     private ActivityPatientregistrationformBinding binding;
@@ -28,8 +48,23 @@ public class patientregistrationform extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseDatabase database;
     private ProgressDialog progressDialog;
-    private static final int PICK_IMAGE_REQUEST = 1;
     private Uri imageUri = null;
+    private String supabaseImageUrl = null;
+
+    // Supabase configuration
+    private static final String SUPABASE_URL = SupabaseConfig.SUPABASE_URL;
+    private static final String SUPABASE_ANON_KEY = SupabaseConfig.SUPABASE_ANON_KEY;
+    private static final String SUPABASE_STORAGE_BUCKET = SupabaseConfig.SUPABASE_STORAGE_BUCKET;
+
+    private final ActivityResultLauncher<Intent> pickImageLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                    imageUri = result.getData().getData();
+                    binding.profileImage.setImageURI(imageUri);
+                }
+            }
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,17 +136,7 @@ public class patientregistrationform extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Profile Image"), PICK_IMAGE_REQUEST);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
-            imageUri = data.getData();
-            binding.profileImage.setImageURI(imageUri);
-        }
+        pickImageLauncher.launch(Intent.createChooser(intent, "Select Profile Image"));
     }
 
     private void setupBloodGroupDropdown() {
@@ -217,7 +242,94 @@ public class patientregistrationform extends AppCompatActivity {
             return;
         }
 
-        registerUser(name, email, contactno, city, password, dob, bloodGroup, allergies, emergencyContact, medicalHistory, enableBiometric);
+        progressDialog.show();
+        progressDialog.setMessage("Uploading image...");
+
+        if (imageUri != null) {
+            uploadImageToSupabase(imageUri, name, email, contactno, city, password, dob, bloodGroup, allergies, emergencyContact, medicalHistory, enableBiometric);
+        } else {
+            // No image selected, continue with registration
+            registerUser(name, email, contactno, city, password, dob, bloodGroup, allergies, emergencyContact, medicalHistory, enableBiometric, null);
+        }
+    }
+
+    private void uploadImageToSupabase(Uri imageUri, String name, String email, String contactno, String city,
+                                       String password, String dob, String bloodGroup, String allergies,
+                                       String emergencyContact, String medicalHistory, boolean enableBiometric) {
+        // Create a unique file name for the image
+        String fileName = UUID.randomUUID().toString() + ".jpg";
+
+        // Execute network operation in background thread
+        new Thread(() -> {
+            try {
+                // Get image bytes
+                byte[] imageBytes = getImageBytes(imageUri);
+
+                // Configure Supabase storage client
+                OkHttpClient client = new OkHttpClient();
+
+                // Create request body
+                RequestBody requestBody = new MultipartBody.Builder()
+                        .setType(MultipartBody.FORM)
+                        .addFormDataPart("file", fileName,
+                                RequestBody.create(MediaType.parse("image/jpeg"), imageBytes))
+                        .build();
+
+                // Create request
+                Request request = new Request.Builder()
+                        .url(SUPABASE_URL + "/storage/v1/object/" + SUPABASE_STORAGE_BUCKET + "/" + fileName)
+                        .addHeader("apikey", SUPABASE_ANON_KEY)
+                        .addHeader("Authorization", "Bearer " + SUPABASE_ANON_KEY)
+                        .post(requestBody)
+                        .build();
+
+                // Execute request
+                Response response = client.newCall(request).execute();
+
+                // Check response
+                if (response.isSuccessful()) {
+                    // Create the public URL for the uploaded image
+                    String imageUrl = SUPABASE_URL + "/storage/v1/object/public/" + SUPABASE_STORAGE_BUCKET + "/" + fileName;
+
+                    // Update UI thread
+                    runOnUiThread(() -> {
+                        progressDialog.setMessage("Registering user...");
+                        registerUser(name, email, contactno, city, password, dob, bloodGroup, allergies, emergencyContact, medicalHistory, enableBiometric, imageUrl);
+                    });
+                } else {
+                    // Handle error
+                    runOnUiThread(() -> {
+                        progressDialog.dismiss();
+                        Toast.makeText(patientregistrationform.this,
+                                "Failed to upload image: " + response.message(),
+                                Toast.LENGTH_SHORT).show();
+                        // Continue registration without image
+                        registerUser(name, email, contactno, city, password, dob, bloodGroup, allergies, emergencyContact, medicalHistory, enableBiometric, null);
+                    });
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                runOnUiThread(() -> {
+                    progressDialog.dismiss();
+                    Toast.makeText(patientregistrationform.this,
+                            "Error uploading image: " + e.getMessage(),
+                            Toast.LENGTH_SHORT).show();
+                    // Continue registration without image
+                    registerUser(name, email, contactno, city, password, dob, bloodGroup, allergies, emergencyContact, medicalHistory, enableBiometric, null);
+                });
+            }
+        }).start();
+    }
+
+    private byte[] getImageBytes(Uri imageUri) throws IOException {
+        InputStream inputStream = getContentResolver().openInputStream(imageUri);
+
+        // Compress image to reduce size
+        Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 80, baos);
+
+        return baos.toByteArray();
     }
 
     private boolean validateAllFields(String name, String email, String contactno, String city,
@@ -304,16 +416,15 @@ public class patientregistrationform extends AppCompatActivity {
 
     private void registerUser(String name, String email, String contactno, String city,
                               String password, String dob, String bloodGroup, String allergies,
-                              String emergencyContact, String medicalHistory, boolean enableBiometric) {
-        progressDialog.show();
-
+                              String emergencyContact, String medicalHistory, boolean enableBiometric,
+                              String profileImageUrl) {
         FirebaseUser currentUser = auth.getCurrentUser();
         if (currentUser != null) {
             currentUser.updatePassword(password)
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
                             saveUserToDatabase(currentUser.getUid(), name, email, contactno, selectedGender, dob, city,
-                                    password, bloodGroup, allergies, emergencyContact, medicalHistory, enableBiometric);
+                                    password, bloodGroup, allergies, emergencyContact, medicalHistory, enableBiometric, profileImageUrl);
                         } else {
                             progressDialog.dismiss();
                             Toast.makeText(this, "Failed to update password: " + task.getException().getMessage(),
@@ -326,7 +437,7 @@ public class patientregistrationform extends AppCompatActivity {
     private void saveUserToDatabase(String patientId, String name, String email, String contactno,
                                     String gender, String dob, String city, String password,
                                     String bloodGroup, String allergies, String emergencyContact,
-                                    String medicalHistory, boolean enableBiometric) {
+                                    String medicalHistory, boolean enableBiometric, String profileImageUrl) {
         DatabaseReference reference = database.getReference().child("patient").child(patientId);
 
         Users.PatientUser patient = new Users.PatientUser(patientId, name, email, contactno, gender, dob, city,
@@ -334,8 +445,10 @@ public class patientregistrationform extends AppCompatActivity {
         patient.setEmailVerified(true);
         patient.setPhoneVerified(true);
         patient.setEnableBiometric(enableBiometric);
-        if (imageUri != null) {
-            patient.setProfileImageUrl(imageUri.toString());
+
+        // Set the Supabase image URL instead of the local URI
+        if (profileImageUrl != null) {
+            patient.setProfileImageUrl(profileImageUrl);
         }
 
         reference.setValue(patient)
